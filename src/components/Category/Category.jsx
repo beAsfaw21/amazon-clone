@@ -7,11 +7,11 @@ import img5 from '../carousel/img/10005.jpg';
 import './Category.css';
 
 const categories = [
-  { title: 'Electronics', image: img1 },
-  { title: 'Discover fashion trends', image: img2 },
-  { title: "Men's Clothing", image: img3 },
-  { title: 'Jewelry', image: img4 },
-  { title: 'Home & Kitchen', image: img5 },
+  { title: 'Toys & Games', image: img1 },
+  { title: 'Beauty', image: img2 },
+  { title: 'Gifts', image: img3 },
+  { title: 'Books', image: img4 },
+  { title: 'Gaming', image: img5 },
 ];
 
 function Category() {
@@ -25,7 +25,7 @@ function Category() {
         {categories.map((category) => (
           <a className="category-card" href={`/categories/${category.title.toLowerCase().replaceAll(' ', '-')}`} key={category.title}>
             <h3>{category.title}</h3>
-            <img src={category.image} alt="" />
+            <img src={category.image} alt={`${category.title} collection`} />
             <span>Shop now</span>
           </a>
         ))}
