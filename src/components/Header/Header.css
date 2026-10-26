@@ -1,26 +1,27 @@
 .amazon-header {
-  background: #131921;
+  background: #131a22;
   color: #fff;
-  padding: 12px 24px;
 }
 
 .amazon-header__bar {
   align-items: center;
   display: flex;
-  gap: 20px;
+  gap: 14px;
   margin: 0 auto;
   max-width: 1440px;
+  min-height: 70px;
+  padding: 0 12px;
 }
 
 .amazon-header__left,
 .amazon-header__right {
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .amazon-header__left {
-  min-width: 270px;
+  min-width: 235px;
 }
 
 .amazon-logo {
@@ -28,6 +29,20 @@
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -1px;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.amazon-logo::after {
+  border-bottom: 3px solid #f3a847;
+  border-radius: 50%;
+  bottom: 3px;
+  content: "";
+  height: 8px;
+  left: 12px;
+  position: absolute;
+  transform: rotate(-5deg);
+  width: 65px;
 }
 
 .amazon-header a {
@@ -35,28 +50,34 @@
   text-decoration: none;
 }
 
+.delivery {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
 .delivery-icon {
-  color: #f3a847;
-  font-size: 28px;
+  color: #fff;
+  font-size: 25px;
 }
 
 .delivery-location p,
 .header-link p {
   color: #c6c6c6;
-  font-size: 12px;
+  font-size: 11px;
   margin: 0;
 }
 
 .delivery-location span,
 .header-link span {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 
 .amazon-search {
   display: flex;
   flex: 1;
-  height: 42px;
+  height: 40px;
 }
 
 .amazon-search select,
@@ -102,6 +123,29 @@
   gap: 4px;
 }
 
+.amazon-nav {
+  align-items: center;
+  background: #232f3e;
+  display: flex;
+  gap: 24px;
+  min-height: 38px;
+  padding: 0 12px;
+}
+
+.amazon-nav a {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  gap: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.amazon-nav a:first-child {
+  font-weight: 700;
+}
+
 .cart-link span {
   color: #f3a847;
   font-size: 16px;
@@ -111,10 +155,17 @@
 @media (max-width: 900px) {
   .amazon-header__bar {
     flex-wrap: wrap;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 
   .amazon-search {
     flex-basis: 100%;
     order: 3;
+  }
+
+  .amazon-nav {
+    gap: 14px;
+    overflow-x: auto;
   }
 }

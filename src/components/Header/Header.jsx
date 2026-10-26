@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaCartPlus } from "react-icons/fa";
 import './Header.css';
@@ -8,50 +9,49 @@ const Header = () => {
     <header className="amazon-header">
         <section className="amazon-header__bar">
             <div className="amazon-header__left">
-                {/* logo */}
-
-            <a href='/'>
-            <span className="amazon-logo">amazon</span>
-            </a>
+                <a className="amazon-logo" href='/'>amazon</a>
            {/* Delivery */}
-                <span className="delivery-icon">
-<CiDeliveryTruck />
-                </span>
+                <div className="delivery">
+                    <CiDeliveryTruck className="delivery-icon" />
                 <div className="delivery-location">
                     <p>Deliver To</p>
                     <span>Ethiopia</span>
                 </div>
+                </div>
             </div>
             <div className="amazon-search">
-                {/* Search */}
                 <select name='' id=''>
                     <option value="">All</option>
                 </select>
-                <input type='text' name='' id='' placeholder='search product'/>
+                <input type='text' name='' id='' placeholder='Search Amazon'/>
                 <button type="button" aria-label="Search">
                     <FaSearch />
                 </button>
             </div>
-            {/* right side */}
             <div className="amazon-header__right">
                 <div className="language">🇺🇸 <span>EN</span></div>
-                <div className="header-link">
+                <a className="header-link" href="/account">
                     <p>Sign In</p>
                     <span>Account & Lists</span>
-                </div>
-                {/* three components */}
-                {/* orders */}
-                <a className="header-link" href='/orders'>
-                    <p>returns</p>
-                    <span>&orders</span>
                 </a>
-                {/* cart */}
+                <a className="header-link" href='/orders'>
+                    <p>Returns</p>
+                    <span>& Orders</span>
+                </a>
                 <a className="cart-link" href="/cart">
-                <FaCartPlus />
-                <span>0</span>
+                    <FaCartPlus />
+                    <span>0</span>
                 </a>
             </div>
         </section>
+        <nav className="amazon-nav" aria-label="Primary navigation">
+            <a href="/all"><FaBars /> All</a>
+            <a href="/deals">Today's Deals</a>
+            <a href="/service">Customer Service</a>
+            <a href="/registry">Registry</a>
+            <a href="/gift-cards">Gift Cards</a>
+            <a href="/sell">Sell</a>
+        </nav>
     </header>
   )
 }
