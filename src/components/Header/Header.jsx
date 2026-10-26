@@ -2,61 +2,57 @@ import React from 'react'
 import { FaSearch } from "react-icons/fa";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaCartPlus } from "react-icons/fa";
+import './Header.css';
 const Header = () => {
   return (
-    <section>
-        <section>
-            <div>
+    <header className="amazon-header">
+        <section className="amazon-header__bar">
+            <div className="amazon-header__left">
                 {/* logo */}
 
             <a href='/'>
-            <img src='https://pngimg.com/uploads/amazon/amazon_PNG11.png' alt='' />
+            <span className="amazon-logo">amazon</span>
             </a>
            {/* Delivery */}
-                <span>
+                <span className="delivery-icon">
 <CiDeliveryTruck />
                 </span>
-                <div>
-                    <p> Delliver To</p>
+                <div className="delivery-location">
+                    <p>Deliver To</p>
                     <span>Ethiopia</span>
                 </div>
             </div>
-            <div>
+            <div className="amazon-search">
                 {/* Search */}
                 <select name='' id=''>
                     <option value="">All</option>
                 </select>
                 <input type='text' name='' id='' placeholder='search product'/>
-                <FaSearch />
+                <button type="button" aria-label="Search">
+                    <FaSearch />
+                </button>
             </div>
             {/* right side */}
-            <div>
-                <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_the_United_States.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="" />
-                    <section>
-                        <option value="">EN</option>
-                    </section>
+            <div className="amazon-header__right">
+                <div className="language">🇺🇸 <span>EN</span></div>
+                <div className="header-link">
+                    <p>Sign In</p>
+                    <span>Account & Lists</span>
                 </div>
                 {/* three components */}
-                <a href=''>
-                    <div>
-                        <p>Sign In</p>
-                        <span>Account & Lists </span>
-                    </div>
-                </a>
                 {/* orders */}
-                <a href=''> 
+                <a className="header-link" href='/orders'>
                     <p>returns</p>
                     <span>&orders</span>
                 </a>
                 {/* cart */}
-                <a to={"/cart"}>
+                <a className="cart-link" href="/cart">
                 <FaCartPlus />
                 <span>0</span>
                 </a>
             </div>
         </section>
-    </section>
+    </header>
   )
 }
 
