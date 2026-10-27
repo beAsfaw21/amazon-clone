@@ -3,9 +3,6 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
-import Carousel from './components/carousel/carousel';
-import Category from './components/Category/Category';
-import Product from './components/Product/Product';
 import Account from './pages/Account/Account';
 import All from './pages/All/All';
 import Cart from './pages/Cart/Cart';
@@ -25,14 +22,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <Home>
-              <Carousel/>
-              <Category/>
-              <Product/>
-            </Home>
-          }
+          element={<Home />}
         />
+        <Route path="/home" element={<Home />} />
         <Route path="/account" element={<Account />} />
         <Route path="/all" element={<All />} />
         <Route path="/cart" element={<Cart />} />
