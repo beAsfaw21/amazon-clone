@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -9,7 +10,7 @@ const Header = () => {
     <header className="amazon-header">
         <section className="amazon-header__bar">
             <div className="amazon-header__left">
-                <a className="amazon-logo" href='/'>amazon</a>
+                <Link className="amazon-logo" to="/">amazon</Link>
            {/* Delivery */}
                 <div className="delivery">
                     <CiDeliveryTruck className="delivery-icon" />
@@ -30,27 +31,27 @@ const Header = () => {
             </div>
             <div className="amazon-header__right">
                 <div className="language">🇺🇸 <span>EN</span></div>
-                <a className="header-link" href="/account">
+                <Link className="header-link" to="/account">
                     <p>Sign In</p>
                     <span>Account & Lists</span>
-                </a>
-                <a className="header-link" href='/orders'>
+                </Link>
+                <Link className="header-link" to="/orders">
                     <p>Returns</p>
                     <span>& Orders</span>
-                </a>
-                <a className="cart-link" href="/cart">
+                </Link>
+                <Link className="cart-link" to="/cart">
                     <FaCartPlus />
                     <span>0</span>
-                </a>
+                </Link>
             </div>
         </section>
         <nav className="amazon-nav" aria-label="Primary navigation">
-            <a href="/all"><FaBars /> All</a>
-            <a href="/deals">Today's Deals</a>
-            <a href="/service">Customer Service</a>
-            <a href="/registry">Registry</a>
-            <a href="/gift-cards">Gift Cards</a>
-            <a href="/sell">Sell</a>
+            <Link to="/all"><FaBars /> All</Link>
+            <Link to="/deals">Today's Deals</Link>
+            <Link to="/service">Customer Service</Link>
+            <Link to="/registry">Registry</Link>
+            <Link to="/gift-cards">Gift Cards</Link>
+            <Link to="/sell">Sell</Link>
         </nav>
     </header>
   )
