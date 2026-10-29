@@ -2,3 +2,17 @@
   background: #eaeded;
   min-height: 100vh;
 }
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #007eb9;
+  outline-offset: 2px;
+}

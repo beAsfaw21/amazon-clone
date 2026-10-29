@@ -14,12 +14,14 @@ import Orders from './pages/Orders/Orders';
 import Registry from './pages/Registry/Registry';
 import Service from './pages/Service/Service';
 import Sell from './pages/Sell/Sell';
+import { StoreProvider } from './StoreContext';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Routes>
+    <StoreProvider>
+      <div className="App">
+        <Header/>
+        <Routes>
         <Route
           path="/"
           element={<Home />}
@@ -35,8 +37,9 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+        </Routes>
+      </div>
+    </StoreProvider>
   );
 }
 

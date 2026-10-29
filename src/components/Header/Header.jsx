@@ -1,11 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaCartPlus } from "react-icons/fa";
 import './Header.css';
+import { useStore } from '../../StoreContext';
 const Header = () => {
+  const { cartCount } = useStore();
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+  const submitSearch = (event) => {
+    event.preventDefault();
+    navigate(query.trim() ? `/all?search=${encodeURIComponent(query.trim())}` : '/all');
+  };
   return (
     <header className="amazon-header">
         <section className="amazon-header__bar">
@@ -20,15 +28,15 @@ const Header = () => {
                 </div>
                 </div>
             </div>
-            <div className="amazon-search">
+            <form className="amazon-search" onSubmit={submitSearch}>
                 <select name='' id=''>
                     <option value="">All</option>
                 </select>
-                <input type='text' name='' id='' placeholder='Search Amazon'/>
+                <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search Amazon" aria-label="Search products" />
                 <button type="button" aria-label="Search">
                     <FaSearch />
                 </button>
-            </div>
+            </form>
             <div className="amazon-header__right">
                 <div className="language">🇺🇸 <span>EN</span></div>
                 <Link className="header-link" to="/account">
@@ -41,7 +49,7 @@ const Header = () => {
                 </Link>
                 <Link className="cart-link" to="/cart">
                     <FaCartPlus />
-                    <span>0</span>
+                    <span>{cartCount}</span>
                 </Link>
             </div>
         </section>

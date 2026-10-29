@@ -5,6 +5,7 @@ import img3 from '../carousel/img/10003.jpg';
 import img4 from '../carousel/img/10004.jpg';
 import img5 from '../carousel/img/10005.jpg';
 import './Category.css';
+import { Link } from 'react-router-dom';
 
 const categories = [
   { title: 'Toys & Games', image: img1 },
@@ -19,15 +20,15 @@ function Category() {
     <section className="category-section" aria-labelledby="category-title">
       <div className="category-heading">
         <h2 id="category-title">Shop by category</h2>
-        <a href="/categories">See all</a>
+        <Link to="/all">See all</Link>
       </div>
       <div className="category-list">
         {categories.map((category) => (
-          <a className="category-card" href={`/categories/${category.title.toLowerCase().replaceAll(' ', '-')}`} key={category.title}>
+          <Link className="category-card" to={`/all?category=${encodeURIComponent(category.title)}`} key={category.title}>
             <h3>{category.title}</h3>
             <img src={category.image} alt={`${category.title} collection`} />
             <span>Shop now</span>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

@@ -7,6 +7,7 @@ import beautyImage from './img/75656337-b5ce-44d2-b19e-60b6ad0121a4.jpg';
 import footwearImage from './img/b0d3a689-c481-4eca-acbe-61c9509f8801.jpg';
 import petImage from './img/c671c4bd-30a4-4bf1-aa0a-2ef93312a0bf.jpg';
 import './Product.css';
+import { useStore } from '../../StoreContext';
 
 const products = [
   { title: 'Modern indoor plants and living room decor', image: homeImage, price: '89.99', rating: 4.5, reviews: 128 },
@@ -35,6 +36,7 @@ function Rating({ value, reviews }) {
 }
 
 function Product() {
+  const { addToCart } = useStore();
   return (
     <section className="product-section" aria-labelledby="product-title">
       <div className="product-heading">
@@ -52,7 +54,7 @@ function Product() {
             <p className="product-price">
               <span>$</span>{product.price}
             </p>
-            <button type="button">Add to Cart</button>
+            <button type="button" onClick={() => addToCart(product)}>Add to Cart</button>
           </article>
         ))}
       </div>
