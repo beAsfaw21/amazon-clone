@@ -15,6 +15,7 @@ import Registry from './pages/Registry/Registry';
 import Service from './pages/Service/Service';
 import Sell from './pages/Sell/Sell';
 import { StoreProvider } from './StoreContext';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/sell" element={<Sell />} />
         <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </div>
     </StoreProvider>
   );
