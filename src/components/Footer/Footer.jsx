@@ -7,25 +7,25 @@ const footerGroups = [
   {
     title: 'Get to Know Us',
     links: [
-      ['About Amazon', '/all'],
-      ['Careers', '/sell'],
-      ['Amazon Science', '/service'],
+      ['About Amazon', '/about'],
+      ['Careers', '/careers'],
+      ['Amazon Science', '/science'],
     ],
   },
   {
     title: 'Make Money with Us',
     links: [
-      ['Sell products on Amazon', '/sell'],
-      ['Sell apps on Amazon', '/sell'],
-      ['Advertise Your Products', '/sell'],
+      ['Sell products on Amazon', '/sell-products'],
+      ['Sell apps on Amazon', '/sell-apps'],
+      ['Advertise Your Products', '/advertise'],
     ],
   },
   {
     title: 'Amazon Payment Products',
     links: [
-      ['Amazon Business Card', '/service'],
-      ['Shop with Points', '/service'],
-      ['Reload Your Balance', '/service'],
+      ['Amazon Business Card', '/business-card'],
+      ['Shop with Points', '/shop-with-points'],
+      ['Reload Your Balance', '/reload-balance'],
     ],
   },
   {
@@ -33,9 +33,9 @@ const footerGroups = [
     links: [
       ['Your Account', '/account'],
       ['Your Orders', '/orders'],
-      ['Shipping Rates & Policies', '/service'],
-      ['Returns & Replacements', '/service'],
-      ['Help', '/service'],
+      ['Shipping Rates & Policies', '/shipping'],
+      ['Returns & Replacements', '/returns'],
+      ['Help', '/help'],
     ],
   },
 ];
