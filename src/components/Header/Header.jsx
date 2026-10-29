@@ -54,6 +54,7 @@ const Header = () => {
             </div>
         </section>
         <nav className="amazon-nav" aria-label="Primary navigation">
+            <Link to="/">Home</Link>
             <Link to="/all"><FaBars /> All</Link>
             <Link to="/deals">Today's Deals</Link>
             <Link to="/service">Customer Service</Link>

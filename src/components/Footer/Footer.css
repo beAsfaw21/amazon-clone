@@ -109,6 +109,17 @@
   font-size: 12px;
 }
 
+.footer-home-link {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-home-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 700px) {
   .footer-links__inner {
     gap: 28px 18px;

@@ -70,6 +70,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-legal">
+        <Link className="footer-home-link" to="/">Home</Link>
         <span>Conditions of Use</span>
         <span>Privacy Notice</span>
         <span>Your Ads Privacy Choices</span>
